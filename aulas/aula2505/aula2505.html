@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style01.css">
+    <link rel="stylesheet" href="css/style02.css">
+    <link rel="stylesheet" href="css/style03.css">
     <link rel="stylesheet" href="css/style04.css">
 </head>
 
@@ -15,40 +18,44 @@
             <h1>Bem-Vindo à minha página inicial</h1>
             <p>Use o menu para selecionar diferentes folhas de estilo</p>
         </div>
-
-        <div id="menubar">
-            <ul>
-                <li class="item-menu">Folha de estilo 1</li>
-                <li class="item-menu">Folha de estilo 2</li>
-                <li class="item-menu">Folha de estilo 3</li>
-                <li class="item-menu">Folha de estilo 4</li>
-                <li class="item-menu">Sem folha de estilo</li>
-            </ul>
-        </div>
-        <div id="main">
-            <h1>Folhas de estilo diferentes da mesma página</h1>
-            <p>Esta é uma demonstração de como diferentes folhas de estilo podem alterar o layout de sua página HTML.
-                Você
-                pode
-                alterar o layout desta página selecionando diferentes folhas de estilo no menu ou selecionando um dos
-                seguintes
-                links:
-                <br>
-                <a href="#">Stylesheet1</a>, <a href="#">Stylesheet2</a>, <a href="#">Stylesheet3</a>, <a href="#">Stylesheet4</a>
-            </p>
-            <h2>Sem estilos</h2>
-            <p>Esta página usa elementos DIV para agrupar diferentes seções da página HTML. Clique aqui para ver como
-                fica a
-                página sem folha de estilo:
-                <br>
-                <a href="">Sem folha</a> de estilo .
-            </p>
-        </div>
-        <div id="sidebar">
-            <h3>Barra Lateral</h3>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                laoreet
-                dolore magna aliquam erat volutpat.</p>
+        <div id="wrapper">
+            <div id="menubar">
+                <ul>
+                    <li class="item-menu" onclick="onStyle(0)">Folha de estilo 1</li>
+                    <li class="item-menu" onclick="onStyle(1)">Folha de estilo 2</li>
+                    <li class="item-menu" onclick="onStyle(2)">Folha de estilo 3</li>
+                    <li class="item-menu" onclick="onStyle(3)">Folha de estilo 4</li>
+                    <li class="item-menu" onclick="noStyle()">Sem folha de estilo</li>
+                </ul>
+            </div>
+            <div id="main">
+                <h1>Folhas de estilo diferentes da mesma página</h1>
+                <p>Esta é uma demonstração de como diferentes folhas de estilo podem alterar o layout de sua página
+                    HTML.
+                    Você
+                    pode
+                    alterar o layout desta página selecionando diferentes folhas de estilo no menu ou selecionando um
+                    dos
+                    seguintes
+                    links:
+                    <br>
+                    <a onclick="onStyle(0)" href="#">Stylesheet1</a>, <a onclick="onStyle(1)" href="#">Stylesheet2</a>, <a onclick="onStyle(2)" href="#">Stylesheet3</a>, <a onclick="onStyle(3)" href="#">Stylesheet4</a>
+                </p>
+                <h2>Sem estilos</h2>
+                <p>Esta página usa elementos DIV para agrupar diferentes seções da página HTML. Clique aqui para ver
+                    como
+                    fica a
+                    página sem folha de estilo:
+                    <br>
+                    <a onclick="noStyle()" href="">Sem folha</a> de estilo .
+                </p>
+            </div>
+            <div id="sidebar">
+                <h3>Barra Lateral</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                    laoreet
+                    dolore magna aliquam erat volutpat.</p>
+            </div>
         </div>
         <div id="bottom">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
@@ -60,6 +67,21 @@
             facilisi.
         </div>
     </div>
+    <script>
+        function noStyle() {
+            document.styleSheets[0].disabled = true;
+            document.styleSheets[1].disabled = true;
+            document.styleSheets[2].disabled = true;
+            document.styleSheets[3].disabled = true;
+        }
+
+        function onStyle(n) {
+            noStyle()
+            document.styleSheets[n].disabled = false;
+        }
+
+        onStyle(0);
+    </script>
 </body>
 
 </html>

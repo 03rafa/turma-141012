@@ -1,5 +1,5 @@
 body{
-    font: 100% Courier ;
+    font: 100% Courier New;
     margin: 20px;
     line-height: 26px;
     background-color: #000000;
@@ -15,7 +15,9 @@ body{
 .item-menu{
 
 }
-
+#main{
+    padding: 10px;
+}
 .item-menu:hover{
     color: white;
     cursor: pointer;
@@ -29,7 +31,7 @@ a:hover{
     color: #84c754;
 }
 
-#bottom{
+#bottom, #sidebar{
     color: white;
     padding: 10px;
     border-radius: 4px;
@@ -46,12 +48,9 @@ a:hover{
 #sidebar{
     position: absolute;
     right: 0;
-    top: 0;
+    top: -16px;
     width: 320px;
     text-align: left;
     line-height: 20px;
     font-size: 80%;
-    border: 1px solid white;
-    color: white;
-    padding: 10px;
 }
