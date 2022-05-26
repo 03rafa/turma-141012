@@ -1,0 +1,57 @@
+body{
+    font: 100% Courier ;
+    margin: 20px;
+    line-height: 26px;
+    background-color: #000000;
+    color: #84c754;
+}
+#top{
+    padding: 15px;
+}
+
+#top h1, #top p{
+    margin: 0;
+}
+.item-menu{
+
+}
+
+.item-menu:hover{
+    color: white;
+    cursor: pointer;
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    color: #84c754;
+}
+
+#bottom{
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 70%;
+    line-height: 14px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+#wrapper{
+    position: relative;
+}
+
+#sidebar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 320px;
+    text-align: left;
+    line-height: 20px;
+    font-size: 80%;
+    border: 1px solid white;
+    color: white;
+    padding: 10px;
+}
