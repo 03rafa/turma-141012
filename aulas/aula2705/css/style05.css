@@ -1,0 +1,82 @@
+body{
+    line-height: 26px;
+    font: 100% Verdana;
+    margin: 20px;
+    overflow: auto;
+    background-color: rgb(255, 247, 218);
+}
+#wrapper{
+    overflow: auto;
+}
+#top{
+    background-color: #e2dbaf;
+    border-radius: 50px 0px 50px 0px;
+    padding: 10px 0px 10px 40px;
+    border: solid 2px rgb(136, 124, 80);
+}
+#top h1{
+    margin-top: 21px;
+}
+h1, h3{
+    color: rgb(53, 41, 1);
+}
+h2 {
+    color: rgb(136, 124, 80);
+}
+
+.item-menu{
+    background-color: rgb(136, 124, 80);
+    color: rgb(255, 247, 218);
+    list-style-type: none;
+    width: 165px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 4px;
+    text-align: center;
+    float: left;
+    border-radius: 30px 0px 30px 0px;
+    border: solid 2px rgb(53, 41, 1);
+}
+
+.item-menu:hover{
+    background-color: rgb(53, 41, 1);
+}
+.item-menu:nth-child(5){
+    background-color: rgb(53, 41, 1);
+    border: solid 2px rgb(136, 124, 80);
+}
+.item-menu:nth-child(5):hover{
+    background-color: rgb(136, 124, 80);
+}
+#menubar{
+    overflow: auto;
+}
+
+ul{
+    padding: 0;
+}
+#main{
+    
+}
+#sidebar{
+    background-color: #e2dbaf;
+    border: solid 2px rgb(136, 124, 80);
+    padding-left: 10px;
+    border-radius: 50px 0px 50px 0px;
+}
+
+#bottom{
+    text-align: center;
+    font-size: 70%;
+    padding: 10px;
+    line-height: 14px;
+}
+
+a{
+    color: #000000;
+    text-decoration: underline;
+}
+a:hover{
+    color: rgb(136, 124, 80);
+    text-decoration: none;
+}
