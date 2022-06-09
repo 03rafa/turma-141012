@@ -61,12 +61,12 @@
         //modificar o titulo pelo .getElementById
     </script>
     <br>
-    <button onclick="personalizar('')"><b>Personalizar Título</b></button>
+    <button onclick="personalizeTitle('')"><b>Personalizar Título</b></button>
      
      <script>
-         function personalizar() {
-            let nome = prompt("Digite o novo título aqui");
-            document.getElementById("titulo").innerHTML = (nome);
+         function personalizeTitle() {
+            let newTitle = prompt("Digite o novo título aqui");
+            document.getElementById("titulo").innerHTML = newTitle;
         }
      </script>
 </body>
