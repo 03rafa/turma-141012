@@ -15,16 +15,18 @@
         <div class="col-sm-2">
             <div class="form-group">
                 <label for="">Tarefa</label>
+                <input type="hidden" id="linha">
                 <input type="text" class="form-control" id="tarefa" value="">
             </div>
         </div>
-        <div class="col-sm-1">
-            <button class="btn btn-success" onclick="incluirTarefa()">Incluir</button>
+        <div class="col-sm-3">
+            <button class="btn btn-success" onclick="incluirTarefa()">Gravar</button>
+            <button class="btn" onclick="novo()">Novo</button>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
-            <table class="table">
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Lista de Tarefas</th>
@@ -45,18 +47,46 @@
 
 
     <script>
-        let corpoTabela = ``;
+        let corpoTabela = `<tr><td>Limpar a Casa</td></tr><tr><td>Lavar os Pratos</td></tr><tr><td>trocar Fraldas</td></tr><tr><td>Estudar html, css java script</td></tr>`;
+        document.querySelector(`tbody`).innerHTML = corpoTabela;
+        onclickNasLinhas();
+
+
+
         function incluirTarefa() {
-
-
+            let linha = document.getElementById(`linha`).value;
             let tarefa = document.getElementById(`tarefa`).value;
+            if (linha != '') {
+                document.getElementsByTagName(`td`)[linha].innerHTML = tarefa;
+            } else {
+                console.log(`nova tarefa ${`tarefa`}`);
+                let tbody = document.getElementsByTagName(`tbody`)[0];
+                corpoTabela += `<tr><td>${tarefa}</td></tr>`;
+                tbody.innerHTML = corpoTabela;
 
-            console.log(`nova tarefa ${`tarefa`}`);
-            let tbody = document.getElementsByTagName(`tbody`)[0];
-            corpoTabela += `<tr><td>${tarefa}</td></tr>`;
-            tbody.innerHTML = corpoTabela;
-            document.getElementById(`tarefa`).value = ``;
-        }    
+            }
+            novo();
+            onclickNasLinhas();
+        }
+
+        function editar(tarefa, linha) {
+            document.getElementById(`tarefa`).value = tarefa;
+            document.getElementById(`linha`).value = linha;
+
+        }
+
+        function onclickNasLinhas() {
+            qtLinhas = document.getElementsByTagName(`td`).length;
+            for (i = 0; i < qtLinhas; i++) {
+                let j = i;
+                document.getElementsByTagName(`td`)[i].addEventListener(`click`, function () { editar(this.innerHTML, j) });
+            }
+        }
+
+        function  novo() {
+             document.getElementById('tarefa').value = '';
+             document.getElementById('linha').value = '';
+        }
     </script>
 
 
